@@ -16,9 +16,6 @@
 
 #include "mbed.h"
 #include "DeviceKey.h"
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 //print a unsigned char buffer in hex format
 void print_buffer(unsigned char *buf, size_t size)
