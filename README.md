@@ -5,15 +5,11 @@ Device key example for Mbed OS
 ## Getting started with DeviceKey ##
 
 This is an example of an application that uses the DeviceKey APIs. 
-The application injects a dummy root of trust (ROT) if one is not set and true random generator (TRNG) is not avalable. The application also invoke the derived key API several time in diffrent conditions and print the result. 
+The application injects a dummy root of trust (ROT) if true random generator (TRNG) is not avalable. The application also invoke the derive key API several times in diffrent conditions and print the result. 
 
 ## Required hardware
-* An [FRDM-K64F](http://os.mbed.com/platforms/FRDM-K64F/) development board.
+* An mbed-os supported development board.
 * A micro-USB cable.
-
-### Other hardware
-
-Although the board shown in this examples is K64F, the example should work on any Mbed enabled hardware.
 
 ##  Getting started ##
 
@@ -29,7 +25,7 @@ Although the board shown in this examples is K64F, the example should work on an
     For example, for `GCC`:
 
     ```
-    mbed compile -t GCC_ARM -m K64F
+    mbed compile -t GCC_ARM -m <your device>
     ```
    
  3. Open a serial console session with the target platform using the following parameters:

@@ -53,7 +53,7 @@ int main()
 
 #if not defined(DEVICE_TRNG)
 
-    //If TRNG is not available it is a must to inject the ROT before the first call to derived key method.
+    //If TRNG is not available it is a must to inject the ROT before the first call to derive key method.
     printf("\n--- No TRNG support for this device. injecting ROT. ---\n");
     ret = inject_rot_key();
     if (DEVICEKEY_SUCCESS != ret && DEVICEKEY_ALREADY_EXIST != ret) {
@@ -62,7 +62,7 @@ int main()
     }
 
     if ( DEVICEKEY_ALREADY_EXIST == ret ) {
-        printf("\n--- ROT Key already exist in the persistent memory. ---\n", ret);
+        printf("\n--- ROT Key already exists in the persistent memory. ---\n", ret);
     } else {
         printf("\n--- ROT Key injected and stored in persistent memory. ---\n", ret);
     }
@@ -84,7 +84,7 @@ int main()
     printf("\n");
 
     //16 byte key derivation with the same salt should result with the same derived key.
-    printf("\n--- Second call to derived key with the same salt. ---\n");
+    printf("\n--- Second call to derive key with the same salt. ---\n");
     ret = devkey.device_key_derived_key(salt1, sizeof(salt1), derive_key2, DEVICE_KEY_16BYTE);
     if (DEVICEKEY_SUCCESS != ret) {
         printf("\n--- Error, derive key failed with error code %d ---\n", ret);
