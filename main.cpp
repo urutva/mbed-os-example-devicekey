@@ -20,7 +20,7 @@
 //print a unsigned char buffer in hex format
 void print_buffer(unsigned char *buf, size_t size)
 {
-    for (int i = 0; i < size; i++) {
+    for (size_t i = 0; i < size; i++) {
         printf("%02X", buf[i]);
     }
 }
@@ -73,7 +73,7 @@ int main()
 
     //16 byte key derivation.
     printf("--- First call to derive key, requesting derived key of 16 byte ---\n");
-    ret = devkey.device_key_derived_key(salt1, sizeof(salt1), derive_key1, DEVICE_KEY_16BYTE);
+    ret = devkey.generate_derived_key(salt1, sizeof(salt1), derive_key1, DEVICE_KEY_16BYTE);
     if (DEVICEKEY_SUCCESS != ret) {
         printf("\n--- Error, derive key failed with error code %d ---\n", ret);
         return -1;
@@ -85,7 +85,7 @@ int main()
 
     //16 byte key derivation with the same salt should result with the same derived key.
     printf("\n--- Second call to derive key with the same salt. ---\n");
-    ret = devkey.device_key_derived_key(salt1, sizeof(salt1), derive_key2, DEVICE_KEY_16BYTE);
+    ret = devkey.generate_derived_key(salt1, sizeof(salt1), derive_key2, DEVICE_KEY_16BYTE);
     if (DEVICEKEY_SUCCESS != ret) {
         printf("\n--- Error, derive key failed with error code %d ---\n", ret);
         return -1;
@@ -105,7 +105,7 @@ int main()
     printf("\n--- Using the following salt for key derivation %s ---\n", salt2);
 
     //16 byte key derivation with the different salt should result with new derived key.
-    ret = devkey.device_key_derived_key(salt2, sizeof(salt2), derive_key1, DEVICE_KEY_16BYTE);
+    ret = devkey.generate_derived_key(salt2, sizeof(salt2), derive_key1, DEVICE_KEY_16BYTE);
     if (DEVICEKEY_SUCCESS != ret) {
         printf("\n--- Error, derive key failed with error code %d ---\n", ret);
         return -1;
@@ -124,7 +124,7 @@ int main()
 
     //32 byte key derivation.
     printf("\n--- 32 byte key derivation example. ---\n");
-    ret = devkey.device_key_derived_key(salt2, sizeof(salt2), derive_key2, DEVICE_KEY_32BYTE);
+    ret = devkey.generate_derived_key(salt2, sizeof(salt2), derive_key2, DEVICE_KEY_32BYTE);
     if (DEVICEKEY_SUCCESS != ret) {
         printf("\n--- Error, derive key failed with error code %d ---\n", ret);
         return -1;
