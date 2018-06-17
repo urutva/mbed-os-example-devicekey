@@ -5,7 +5,7 @@ Device key example for Mbed OS
 ## Getting started with DeviceKey ##
 
 This is an example of an application that uses the DeviceKey APIs. 
-The application injects a dummy root of trust (ROT) if true random generator (TRNG) is not avalable. The application also invoke the derive key API several times in diffrent conditions and print the result. 
+The application injects a dummy root of trust (ROT) if true random number generator (TRNG) is not avalable. The application also invoke the derive key API several times in diffrent conditions and print the result. 
 
 ## Required hardware
 * An mbed-os supported development board.
