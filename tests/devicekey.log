@@ -1,0 +1,22 @@
+--- Mbed OS DeviceKey example ---
+
+--- Using the following salt for key derivation: SALT1 ----- SALT1 ------ SALT1 ---
+--- First call to derive key, requesting derived key of 16 byte ---
+--- Derived key1 is:
+[0-9A-F]+
+
+--- Second call to derive key with the same salt. ---
+--- Derived key2 should be equal to key1 from the first call. key2 is:
+[0-9A-F]+
+--- Keys match ---
+
+--- Using the following salt for key derivation SALT2 ----- SALT2 ------ SALT2 ---
+--- Third call to derive key with the different salt should result with a new derived key1:
+[0-9A-F]+
+--- Keys not match ---
+
+--- 32 byte key derivation example. ---
+--- 32 byte derived key is:
+[0-9A-F]+
+
+--- Mbed OS DeviceKey example done. ---
