@@ -30,7 +30,7 @@ The application injects a dummy root of trust (ROT) if true random number genera
    
  3. Open a serial console session with the target platform using the following parameters:
 
-    * **Baud rate:** 115200
+    * **Baud rate:** 9600
     * **Data bits:** 8
     * **Stop bits:** 1
     * **Parity:** None
@@ -40,7 +40,7 @@ The application injects a dummy root of trust (ROT) if true random number genera
  6. Press the **RESET** button on the board to run the program
 
  7. The serial console should now display a series of results. 
- 
+
 ## Troubleshooting
 
 If you have problems, you can review the [documentation](https://os.mbed.com/docs/latest/tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
