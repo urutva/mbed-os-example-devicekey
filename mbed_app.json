@@ -2,6 +2,11 @@
     "target_overrides": {
         "*": {
             "platform.stdio-convert-newlines": 1
+        },
+        "K66F": {
+            "storage_tdb_internal.internal_base_address": "(1024*1024)",
+            "storage_tdb_internal.internal_size"        : "(96*1024)",
+            "storage.storage_type"                      : "TDB_INTERNAL"
         }
     }
 }

@@ -11,6 +11,8 @@ The application injects a dummy root of trust (ROT) if true random number genera
 * An mbed-os supported development board.
 * A micro-USB cable.
 
+**NOTE:** Currently this application defines settings only for K66F board. Please refer to [Storage Configuration](https://os.mbed.com/docs/mbed-os/latest/reference/storage.html) from Mbed OS documentation as the DeviceKey requires KVStore to be configured.
+
 ##  Getting started ##
 
  1. Import the example.
